@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 25% 6%;
+    --foreground: 35 30% 90%;
+
+    --card: 30 20% 10%;
+    --card-foreground: 35 30% 90%;
+
+    --popover: 30 20% 10%;
+    --popover-foreground: 35 30% 90%;
+
+    --primary: 28 80% 55%;
+    --primary-foreground: 30 25% 6%;
+
+    --secondary: 20 30% 18%;
+    --secondary-foreground: 35 30% 90%;
+
+    --muted: 25 15% 15%;
+    --muted-foreground: 30 15% 55%;
+
+    --accent: 15 60% 45%;
+    --accent-foreground: 35 30% 90%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 25 15% 18%;
+    --input: 25 15% 18%;
+    --ring: 28 80% 55%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 30 20% 8%;
+    --sidebar-foreground: 35 30% 90%;
+    --sidebar-primary: 28 80% 55%;
+    --sidebar-primary-foreground: 30 25% 6%;
+    --sidebar-accent: 20 30% 15%;
+    --sidebar-accent-foreground: 35 30% 90%;
+    --sidebar-border: 25 15% 18%;
+    --sidebar-ring: 28 80% 55%;
+
+    /* Custom tokens */
+    --warm-glow: 28 90% 60%;
+    --terracotta: 15 55% 42%;
+    --cream: 38 40% 85%;
+    --deep-brown: 25 30% 12%;
+    --pin-color: 28 90% 60%;
+    --pin-hover: 15 70% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', sans-serif;
+    overflow: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-body {
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .glass-panel {
+    background: hsl(var(--card) / 0.85);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  .warm-glow {
+    box-shadow: 0 0 30px hsl(var(--warm-glow) / 0.15);
+  }
+}
