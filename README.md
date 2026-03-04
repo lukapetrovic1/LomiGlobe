@@ -23,6 +23,17 @@ npm run build
 npm run test
 ```
 
+## GitHub Pages
+
+This repo should be deployed to GitHub Pages through a GitHub Actions build, not by serving the source branch directly.
+
+1. In GitHub, open `Settings > Secrets and variables > Actions > Variables`.
+2. Add `VITE_SUPABASE_URL`.
+3. Add `VITE_SUPABASE_ANON_KEY`.
+4. In `Settings > Pages`, set the source to `GitHub Actions`.
+
+The workflow in `.github/workflows/deploy-pages.yml` will build `dist/` and publish the static site correctly for the `/LomiGlobe/` subpath.
+
 ## Supabase setup
 
 The frontend uploads images directly from the browser using your Supabase project URL and anon key.

@@ -1,6 +1,6 @@
 import { supabase } from "@/integrations/supabase/client";
 
-export const DEFAULT_MEMORY_IMAGE = "/placeholder.svg";
+export const DEFAULT_MEMORY_IMAGE = `${import.meta.env.BASE_URL}placeholder.svg`;
 export const MEMORY_IMAGES_BUCKET =
   import.meta.env.VITE_SUPABASE_MEMORY_IMAGES_BUCKET || "memory-images";
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;

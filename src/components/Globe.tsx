@@ -4,6 +4,8 @@ import { OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
 import { Memory } from "@/types/memory";
 
+const EARTH_TEXTURE_URL = `${import.meta.env.BASE_URL}earth-texture.jpg`;
+
 function latLngToVector3(lat: number, lng: number, radius: number): THREE.Vector3 {
   const phi = (90 - lat) * (Math.PI / 180);
   const theta = (lng + 180) * (Math.PI / 180);
@@ -15,7 +17,7 @@ function latLngToVector3(lat: number, lng: number, radius: number): THREE.Vector
 
 function Earth() {
   const meshRef = useRef<THREE.Mesh>(null);
-  const texture = useLoader(THREE.TextureLoader, "/earth-texture.jpg");
+  const texture = useLoader(THREE.TextureLoader, EARTH_TEXTURE_URL);
 
   texture.colorSpace = THREE.SRGBColorSpace;
 
